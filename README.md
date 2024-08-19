@@ -8,3 +8,9 @@
 * Try catch blocked whether the scores_possible is either 0 or a string
 * Try catch blocked whether score received is not a number (NaN) 
 * If else statement when comparing assignment_group.course ID and course ID
+## Loops used
+* For of
+* For let
+## Manipulated array and object
+* Added objects to array named result
+* Modified learner object for each specific learner
