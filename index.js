@@ -86,24 +86,7 @@ const LearnerSubmissions = [
 ];
 
 function getLearnerData(course, ag, submissions) {
-  // here, we would process this data to achieve the desired result.
-  // const result = [
-  //   {
-  //     id: 125,
-  //     avg: 0.985, // (47 + 150) / (50 + 150)
-  //     1: 0.94, // 47 / 50
-  //     2: 1.0 // 150 / 150
-  //   },
-  //   {
-  //     id: 132,
-  //     avg: 0.82, // (39 + 125) / (50 + 150)
-  //     1: 0.78, // 39 / 50
-  //     2: 0.833 // late: (140 - 15) / 150
-  //   }
-  // ];
-
-  // return result;
-
+  //HELPER FUNCTION
   //checks to see if specific assignment is due
   function isDue(aDueDate) {
     try {
@@ -118,7 +101,8 @@ function getLearnerData(course, ag, submissions) {
       return error;
     }
   }
-
+  
+  //HELPER FUNCTION
   //calculates learner's score for that specific assignment
   function calculateScore(score, sDate, aDate, pointsPossible) {
     try {
@@ -131,7 +115,8 @@ function getLearnerData(course, ag, submissions) {
       return error;
     }
   }
-
+  
+  //HELPER FUNCTION
   //updates scores of specific learner object based on their assignment submission
   function updateLearnerScores(submission, assignments) {
     for (let assignment of assignments) {
@@ -184,7 +169,7 @@ function getLearnerData(course, ag, submissions) {
     }
     return `Finished update: ${JSON.stringify(learner)}`;
   }
-
+  //================================================================================
   const result = [];
   let totalScore = 0;
   let currentScore = 0;
@@ -226,3 +211,18 @@ function getLearnerData(course, ag, submissions) {
 const result = getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions);
 
 console.log(result);
+  // should print out something similar to the following array of objects
+  // [
+  //   {
+  //     id: 125,
+  //     avg: 0.985, // (47 + 150) / (50 + 150)
+  //     1: 0.94, // 47 / 50
+  //     2: 1.0 // 150 / 150
+  //   },
+  //   {
+  //     id: 132,
+  //     avg: 0.82, // (39 + 125) / (50 + 150)
+  //     1: 0.78, // 39 / 50
+  //     2: 0.833 // late: (140 - 15) / 150
+  //   }
+  // ];
